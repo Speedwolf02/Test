@@ -51,7 +51,7 @@ def start_scheduler():
     # Runs every Saturday (day_of_week='sun') at 10:30 (hour=09, minute=05) IST
     scheduler.add_job(
         upload_anime, 
-        trigger=CronTrigger(day_of_week='sun', hour=9, minute=05, timezone=IST),
+        trigger=CronTrigger(day_of_week='sun', hour=9, minute=6, timezone=IST),
         id='one_piece_job',
         name='One Piece Auto-Upload',
         kwargs={'anime_name': 'One Piece', 'episode_number': 1120}
@@ -61,7 +61,7 @@ def start_scheduler():
     # Runs every Friday (day_of_week='fri') at 20:00 (8:00 PM) IST
     scheduler.add_job(
         upload_anime,
-        trigger=CronTrigger(day_of_week='fri', hour=20, minute=0, timezone=IST),
+        trigger=CronTrigger(day_of_week='fri', hour=20, minute=6, timezone=IST),
         id='frieren_job',
         name='Frieren Auto-Upload',
         kwargs={'anime_name': 'Frieren', 'episode_number': 22}
