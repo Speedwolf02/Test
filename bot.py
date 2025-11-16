@@ -4,6 +4,10 @@ from apscheduler.triggers.cron import CronTrigger
 import time
 import datetime
 import pytz
+import pyrogram.utils
+pyrogram.utils.MIN_CHAT_ID = -999999999999
+pyrogram.utils.MIN_CHANNEL_ID = -1009999999999
+
 
 # --- Configuration ---
 # Set the desired time zone explicitly to IST
