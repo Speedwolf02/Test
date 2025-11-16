@@ -48,10 +48,10 @@ def start_scheduler():
     scheduler = BackgroundScheduler(timezone=str(IST))
     
     # 1. Schedule "One Piece"
-    # Runs every Saturday (day_of_week='sat') at 10:30 (hour=10, minute=30) IST
+    # Runs every Saturday (day_of_week='sun') at 10:30 (hour=09, minute=05) IST
     scheduler.add_job(
         upload_anime, 
-        trigger=CronTrigger(day_of_week='sat', hour=10, minute=30, timezone=IST),
+        trigger=CronTrigger(day_of_week='sun', hour=09, minute=05, timezone=IST),
         id='one_piece_job',
         name='One Piece Auto-Upload',
         kwargs={'anime_name': 'One Piece', 'episode_number': 1120}
